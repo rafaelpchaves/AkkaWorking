@@ -1,16 +1,28 @@
 package br.rafael.main;
 
-import akka.actor.UntypedActor;
+import akka.actor.ActorRef;
+import akka.actor.ActorSystem;
+import akka.actor.Props;
+import br.rafael.main.actors.MasterActor;
+import br.rafael.main.menssages.Metric;
 
-public class Principal extends UntypedActor{
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+public class Principal  {
 
-	}
-
-	@Override
-	public void onReceive(Object arg0) throws Exception {
-		// TODO Auto-generated method stub
+	
+	
+	public static void main(String[] args) throws Exception{
+		
+		Metric metric = new Metric(100, 100, true);
+		
+			
+		
+		ActorSystem _system = ActorSystem.create("StringTest");
+		ActorRef master = _system.actorOf(new Props(MasterActor.class),"master");
+		master.tell("teste" );
+		master.tell(metric);
+		
+		
+		_system.shutdown();
 		
 	}
 
