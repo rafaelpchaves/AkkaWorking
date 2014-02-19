@@ -19,6 +19,8 @@ public class MasterActor extends UntypedActor {
 		}else if(message instanceof Metric){
 			System.out.println("Mensagem passando pelo ator Master - Metric");
 			metricActor.tell(message, getSelf());
+		}else if(message instanceof Integer){
+			System.out.println("Ator master imprimindo um inteiro "+ message);
 		}
 		
 		

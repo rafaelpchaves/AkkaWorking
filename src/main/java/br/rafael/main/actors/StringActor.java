@@ -9,8 +9,14 @@ public class StringActor extends UntypedActor {
 
 		if (message instanceof String) {
 
-			System.out.println("Ator de string");
+			String msgs = testeDeMetodo((String) message);
+			System.out.println("Ator de string              "+ msgs);
 		
 		}
+		
+	}
+	public String testeDeMetodo(String message){
+		
+		return message+" teste de método dentro do ator de strings";
 	}
 }

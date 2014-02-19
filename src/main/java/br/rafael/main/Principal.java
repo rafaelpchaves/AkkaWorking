@@ -18,8 +18,9 @@ public class Principal  {
 		
 		ActorSystem _system = ActorSystem.create("StringTest");
 		ActorRef master = _system.actorOf(new Props(MasterActor.class),"master");
-		master.tell("teste" );
+		master.tell("String");
 		master.tell(metric);
+		master.tell(11);
 		
 		
 		_system.shutdown();
