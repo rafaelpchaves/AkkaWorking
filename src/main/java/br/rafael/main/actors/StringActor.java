@@ -11,7 +11,7 @@ public class StringActor extends UntypedActor {
 
 			String msgs = testeDeMetodo((String) message);
 			System.out.println("Ator de string              "+ msgs);
-		
+			
 		}
 		
 	}
@@ -19,6 +19,6 @@ public class StringActor extends UntypedActor {
 	
 	public String testeDeMetodo(String message){
 		
-		return message+" teste de método dentro do ator de strings";
+		return message+" -  teste de método dentro do ator de strings";
 	}
 }
